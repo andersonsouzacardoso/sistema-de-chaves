@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Retirada de Chave</title>
+    <link rel="stylesheet" href="/css/sistema.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Retirada de Chave</h2>
+
+    <form action="/retirarchave" method="post">
+
+        <!-- MATRICULA -->
+        <div class="input-group">
+            <label>Matrícula do Funcionário</label>
+            <input type="text"
+                   name="matricula"
+                   placeholder="Digite a matrícula"
+                   required>
+        </div>
+
+        <!-- LISTA DE CHAVES -->
+        <div class="input-group">
+            <label>Selecionar Chave</label>
+
+            <select name="idChave" required>
+
+                <option value="">Selecione uma chave</option>
+
+                <option th:each="chave : ${chaves}"
+                        th:value="${chave.id}"
+                        th:text="${chave.chave}">
+                </option>
+
+            </select>
+        </div>
+
+        <button type="submit">Registrar Retirada</button>
+
+    </form>
+
+    <div class="voltar">
+        <a href="/chavesemprestadas">Voltar ao Menu</a>
+    </div>
+
+</div>
+
+</body>
+</html>

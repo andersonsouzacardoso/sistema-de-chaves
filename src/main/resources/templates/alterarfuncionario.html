@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="/css/alterar.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Alterar Funcionarios</h2>
+
+    <form th:action="@{/listadeusuarios/editar}" method="post" th:object="${funcionarios}">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Nome</label>
+        <input type="text" th:field="*{nome}" required>
+
+        <label>Matricula</label>
+        <input type="text" th:field="*{matricula}" required>
+
+        <button type="submit" >Salvar</button>
+    </form>
+
+    <a href="/listadeusuarios">Voltar</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chaves Emprestadas</title>
+    <link rel="stylesheet" href="/css/chavesemprestadas.css">
+    <link type="image/png" sizes="32x32" rel="icon" href=".../icons8-adicionar chave-office40-32.png"> <meta name="msapplication-square70x70logo" content=".../icons8-adicionar chave-office40-70.png"> <meta name="msapplication-TileImage" content=".../icons8-adicionar chave-office40-144.png"> <meta name="msapplication-square150x150logo" content=".../icons8-adicionar chave-office40-150.png"> <meta name="msapplication-square310x310logo" content=".../icons8-adicionar chave-office40-310.png">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Chaves Emprestadas</h2>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Funcionário</th>
+            <th>Matrícula</th>
+            <th>Setor</th>
+            <th>Data Retirada</th>
+            <th>Hora Retirada</th>
+            <th>Data Devolução</th>
+            <th>Hora Devolução</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="registro : ${registros}">
+
+            <td th:text="${registro.nomeFuncionario}"></td>
+            <td th:text="${registro.matricula}"></td>
+            <td th:text="${registro.nomeChave}"></td>
+
+            <td th:text="${registro.dataRetirada}"></td>
+            <td th:text="${registro.horaRetirada}"></td>
+
+            <td th:text="${registro.dataDevolucao}"></td>
+            <td th:text="${registro.horaDevolucao}"></td>
+
+            <td>
+                <form th:action="@{/devolverchave/{id}(id=${registro.id})}"
+                      method="post">
+
+                    <button type="submit">
+                        Devolver
+                    </button>
+                    <br><br>
+
+
+                    <a th:href="@{/chavesemprestadas/excluir/{id}(id=${registro.id})}"
+                       onclick="return confirm('Tem certeza que deseja excluir este registros?')">
+                        <img width="52" height="52" src="https://img.icons8.com/metro/52/FA5252/trash.png" alt="trash"/>
+                    </a>
+
+                </form>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="voltar">
+        <a href="/retirarchave">Voltar ao Menu</a>
+    </div>
+
+    <div class="voltar">
+        <a href="/chaveslistadas"><img width="80" height="80" src="https://img.icons8.com/office/80/add-key.png" alt="add-key"/></a>
+    </div>
+
+    <div class="voltar">
+        <a href="/listadeusuarios"><img width="96" height="96" src="https://img.icons8.com/fluency/96/worker-beard.png" alt="worker-beard"/></a>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

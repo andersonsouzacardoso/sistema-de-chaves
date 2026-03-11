@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de chaves</title>
+    <link rel="stylesheet" href="/css/controle.css">
+
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-crie um novo-office40-96.png"> <meta name="msapplication-square70x70logo" content=".../icons8-crie um novo-office40-70.png"> <meta name="msapplication-TileImage" content=".../icons8-crie um novo-office40-144.png"> <meta name="msapplication-square150x150logo" content=".../icons8-crie um novo-office40-150.png"> <meta name="msapplication-square310x310logo" content=".../icons8-crie um novo-office40-310.png">
+</head>
+<body>
+
+
+
+<div class="container">
+    <h2>Lista de Chaves</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Chave</th>
+            <th>Setor</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="chaves:${chaveslistadas}">
+            <td th:text="${chaves.id}"></td>
+            <td th:text="${chaves.chave}"></td>
+            <td th:text="${chaves.setor}"></td>
+            <td><a th:href="@{/chaveslistadas/alterarchaves/{id}(id=${chaves.id})}"><img width="40" height="40" src="https://img.icons8.com/office/40/create-new.png" alt="create-new"/></a></td>
+
+            <td>
+                <a th:href="@{/chaveslistadas/deletar/{id}(id=${chaves.id})}"
+                   onclick="return confirm('Tem certeza que deseja excluir este usuário?')">
+                    <img width="52" height="52" src="https://img.icons8.com/metro/52/FA5252/trash.png" alt="trash"/>
+                </a>
+
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <div class="acoes">
+        <a href="/chaves">Sair</a>
+    </div>
+
+
+</div>
+
+</body>
+</html>

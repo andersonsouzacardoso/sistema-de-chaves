@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuário</title>
+    <link rel="stylesheet" href="/css/alterar.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Editar Minhas chaves</h2>
+
+    <form th:action="@{/chaveslistadas/alterarchaves}" method="post" th:object="${chaves}">
+        <input type="hidden" th:field="*{id}">
+
+        <label>Chave</label>
+        <input type="text" th:field="*{chave}" required>
+
+        <label>Setor</label>
+        <input type="text" th:field="*{setor}" required>
+
+        <button type="submit" >Salvar</button>
+    </form>
+
+    <a href="/chaveslistadas">Voltar</a>
+</div>
+
+</body>
+</html>

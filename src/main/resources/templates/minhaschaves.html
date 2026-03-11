@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+<body>
+
+<div class="cadastro-container">
+    <h2>Cadastro</h2>
+
+    <form th:action="@{/chaves}" method="post">
+        <div class="input-group">
+            <label for="chave">chave</label>
+            <input
+                    type="text"
+                    id="chave"
+                    name="chave"
+                    placeholder="Digite qual chave"
+                    required>
+        </div>
+
+        <div class="input-group">
+            <label for="setor">Setor</label>
+            <input type="text" id="setor" name="setor"
+                   placeholder="Digite o setor" required>
+        </div>
+
+
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

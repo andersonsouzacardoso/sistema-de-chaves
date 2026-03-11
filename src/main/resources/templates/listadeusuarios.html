@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de chaves</title>
+    <link rel="stylesheet" href="/css/controle.css">
+
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-crie um novo-office40-96.png"> <meta name="msapplication-square70x70logo" content=".../icons8-crie um novo-office40-70.png"> <meta name="msapplication-TileImage" content=".../icons8-crie um novo-office40-144.png"> <meta name="msapplication-square150x150logo" content=".../icons8-crie um novo-office40-150.png"> <meta name="msapplication-square310x310logo" content=".../icons8-crie um novo-office40-310.png">
+</head>
+<body>
+
+
+
+<div class="container">
+    <h2>Lista de Funcionarios</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="funcionarios: ${listadeusuarios}">
+            <td th:text="${funcionarios.id}"></td>
+            <td th:text="${funcionarios.nome}"></td>
+            <td th:text="${funcionarios.matricula}"></td>
+            <td><a th:href="@{/listadeusuarios/editar/{id}(id=${funcionarios.id})}"><img width="40" height="40" src="https://img.icons8.com/office/40/create-new.png" alt="create-new"/></a></td>
+
+            <td>
+                <a th:href="@{/listadeusuarios/excluir/{id}(id=${funcionarios.id})}"
+                   onclick="return confirm('Tem certeza que deseja excluir este usuário?')"><img width="52" height="52" src="https://img.icons8.com/metro/52/FA5252/trash.png" alt="trash"/>
+
+                </a>
+
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <div class="acoes">
+        <a href="/cadastrar">Sair</a>
+    </div>
+
+
+</div>
+
+</body>
+</html>
