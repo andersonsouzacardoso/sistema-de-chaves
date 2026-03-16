@@ -22,7 +22,7 @@ public class FuncionariosController {
     @PostMapping("/cadastrar")
     public String cadastrarpeao(Funcionarios funcionarios){
         funcionariosrepository.save(funcionarios);
-        return "/cadastrarusuarios";
+        return "redirect:/cadastrar";
     }
 
     @GetMapping("/listadeusuarios")
