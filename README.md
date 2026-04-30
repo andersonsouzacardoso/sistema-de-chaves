@@ -2,4 +2,4 @@
 ## Descrição:
 ### Sistema completo de Cadastro de usuários e chaves. O objetivo do projeto é o registro de retirada e entrega de chave, por data, hora e nome de quem retirou. Desenvolvido com Java, Spring Boot Marven, banco de dados relacional Mysql, html e css. CRUD e testes unitário com Junit.
 👨‍💻
-![Imagem do projeto](C:\Users\Anderson\Desktop\Aplicativo para empresa\Social Midia\Sistema de chave para tiktok)
+![Imagem do projeto](C:\Users\Anderson\Desktop\Aplicativo para empresa\Social Midia\Sistema de chave para tiktok\projrto.png)
